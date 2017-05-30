@@ -11,7 +11,7 @@ export default class NewsApp extends React.Component {
 
 
 	componentDidMount() {
-    const FEED_URL = 'http://openfootball.github.io/feed.json';
+    const FEED_URL = 'https://openfootball.github.io/feed.json';
 
     fetch( FEED_URL )
        .then( res => res.json() )

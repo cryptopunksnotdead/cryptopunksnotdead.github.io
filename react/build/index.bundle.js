@@ -9559,7 +9559,7 @@ var NewsApp = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var FEED_URL = 'http://openfootball.github.io/feed.json';
+      var FEED_URL = 'https://openfootball.github.io/feed.json';
 
       fetch(FEED_URL).then(function (res) {
         return res.json();
