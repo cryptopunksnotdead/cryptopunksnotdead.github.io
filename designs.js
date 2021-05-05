@@ -4,13 +4,7 @@
 
     var designs = [
 `###
-# alien (male) - basic - zero attributes
-#
-#  colors:
-#   0 - transparent
-#   1 - black
-#
-#  size: 24x24
+# alien (male) - basic - zero attributes; size: 24x24
 
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -38,13 +32,7 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `,
 `###
-# alien (female) - basic - zero attributes
-#
-#  colors:
-#   0 - transparent
-#   1 - black
-#
-#  size: 24x24
+# alien (female) - basic - zero attributes; size: 24x24
 
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -72,13 +60,7 @@
 . . . . . . . . @ ^ ^ ^ @ . . . . . . . . . . .
 `,
 `###
-# human (male) - basic - zero attributes
-#
-#  colors:
-#   0 - transparent
-#   1 - black
-#
-#  size: 24x24
+# human (male) - basic - zero attributes; size: 24x24
 
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
@@ -106,13 +88,7 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `,
 `###
-# human (female) - basic - zero attributes
-#
-#  colors:
-#   0 - transparent
-#   1 - black
-#
-#  size: 24x24
+# human (female) - basic - zero attributes; size: 24x24
 
 . . . . . . . . . . . . . . . . . . . . . . . .
 . . . . . . . . . . . . . . . . . . . . . . . .
