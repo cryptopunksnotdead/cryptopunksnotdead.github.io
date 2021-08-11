@@ -1,0 +1,109 @@
+<head>
+
+  <script>
+     //////////////
+     // pixelart ascii format
+     //   support comments starting with #
+     //         and allow empty lines
+     //    support leading trailing spaces (get auto-trimmed)
+     //    auto-trim leading and trailing whitespaces & emptylines in design
+     //
+
+     function parseAscii( str ) {
+       let ary = [];
+       str.trim().split( "\n" ).forEach( line => {
+            line = line.trim();
+            if( line.startsWith( "#" ) || line.length == 0 ) {
+              // do nothing; skip
+            } else {
+              values = line.split( /[ \t]+/ );
+              ary.push( values );
+            }
+          } );
+       return ary;
+    }
+
+
+     function writePunk( design, colors ) {
+        var pixels = parseAscii( design );
+
+        pixels.forEach( row => {
+          row.forEach( pixel => {
+          document.write("<div class='pixel' style='background-color:"+
+                          colors[pixel]+"'></div>");
+         });
+         document.write("<br>");
+      });
+    }
+  </script>
+
+
+  <style>
+    .pixel {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <h1>Show Punk in the Pixel Art ("ASCII") Text Format in Web Page</h1>
+
+  <p>
+    Yes, you can. Use "View page source" to see the how the "magic" works.
+  </p>
+
+
+
+<script>
+  var design = `
+###
+# alien (male) - basic - zero attributes
+#
+#  colors:
+#   0 - transparent
+#   1 - black
+#
+#  size: 24x24
+
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . @ @ @ @ @ @ @ . . . . . . . . .
+. . . . . . . @ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . @ @ ^ ^ x @ ^ ^ ^ x @ @ . . . . . . .
+. . . . @ ^ o ^ ^ @ o ^ ^ ^ @ o @ . . . . . . .
+. . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . @ @ ^ ^ ^ ^ ^ o ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ o ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ o ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ @ @ @ @ @ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . . .
+. . . . . . @ ^ ^ ^ @ @ @ @ @ . . . . . . . . .
+. . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
+. . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
+`;
+
+ var colors = {
+  '.':  '#ffffff',       // color 0 - background (use white for now - why? why not?)
+  '@':  '#000000',       // color 1 - black
+  'x':  '#75bdbd',       // color 2 - base 3  (darkest)
+  'o':  '#9be0e0',       // color 3 - base 2  (darker)
+  '^':  '#c8fbfb',       // color 4 - base 1
+ };
+
+  writePunk( design, colors );
+</script>
+</body>
+
