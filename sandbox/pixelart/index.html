@@ -61,7 +61,7 @@
 
 
 <script>
-  var design = `
+  var alien_design = `
 ###
 # alien (male) - basic - zero attributes
 #
@@ -97,7 +97,7 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `;
 
- var colors = {
+ var alien_colors = {
   '.':  '#ffffff',       // color 0 - background (use white for now - why? why not?)
   '@':  '#000000',       // color 1 - black
   'x':  '#75bdbd',       // color 2 - base 3  (darkest)
@@ -105,7 +105,62 @@
   '^':  '#c8fbfb',       // color 4 - base 1
  };
 
-  writePunk( design, colors );
+  writePunk( alien_design, alien_colors );
 </script>
+
+<p>
+  Let's try another one..
+</p>
+
+
+<script>
+  var demon_design = `
+  ###
+# demon (male) - basic - zero attributes
+#
+#  colors:
+#   0 - transparent
+#   1 - black
+#
+#  size: 24x24
+
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . @ @ . . . . . @ @ . . . . . . . .
+. . . . . . . @ ^ @ . . . @ ^ @ . . . . . . . .
+. . . . . . . @ ^ @ @ @ @ @ ^ @ . . . . . . . .
+. . . . . . . @ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ x x ^ ^ ^ x x @ . . . . . . .
+. . . . . @ ^ ^ ^ @ o ^ ^ ^ @ o @ . . . . . . .
+. . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . @ @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ @ @ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ @ @ @ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . .
+. . . . . . @ ^ ^ ^ ^ ^ ^ ^ ^ @ . . . . . . . .
+. . . . . . @ ^ ^ ^ @ @ @ @ @ . . . . . . . . .
+. . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
+. . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
+`;
+
+var demon_colors = {
+  '.':  '#ffffff',       // color 0 - background (use white for now - why? why not?)
+  '@':  '#000000',       // color 1 - black
+  'x':  '#390102',       // color 2 - base 3  (darkest)
+  'o':  '#630006',       // color 3 - base 2  (darker)
+  '^':  '#850008',       // color 4 - base 1
+ };
+
+
+  writePunk( demon_design, demon_colors );
+</script>
+
 </body>
 
