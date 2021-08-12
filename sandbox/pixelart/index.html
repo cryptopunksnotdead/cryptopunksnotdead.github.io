@@ -158,30 +158,60 @@
                                 '^':  '#850008',       // color 4 - base 1
                                });
 
+
+////////////////////////////////////
+// some add-ons / attributes
+
+const cap = Pixelart.parse( `
+  . . @ @ @ @ @ @ @ . . . . .
+  . @ @ @ @ @ @ x @ @ . . . .
+  @ @ @ @ @ @ @ @ x @ . . . .
+  @ @ @ @ @ @ @ @ @ @ @ @ @ .
+  @ @ @ @ @ @ @ @ @ @ @ @ @ @
+`, {    // colors
+  '@': '#8119b7',
+  'x': '#b261dc'
+}, [6,4]  // offset [x,y]
+  );
+
+
 const headband = Pixelart.parse( `
     x x x x x x x x x
     @ @ @ @ @ @ @ @ @
-  `, {
+  `, {    // colors
       '@': '#1A6ED5',
       'x': '#FFFFFF'
      }
    , [7,7]   // offset [x,y]
   );
 
-const eyepatch = Pixelart.parse( `
-  @ @ @ @ @ @ @ @ @ @ @
-  . . @ @ @ @ . . . . .
-  . . @ @ @ @ . . . . .
-  . . . @ @ . . . . . .
-`, {
-    '@': '#000000',
-  }
-  , [6,10]   // offset [x,y]
+
+const lasereyes_design = `
+  . . . . @ . . . . . @ . . . .
+  . . . . @ . . . . . @ . . . .
+  . . . @ x @ . . . @ x @ . . .
+  @ x x x o x @ . @ x o x x x @
+  . . . @ x @ . . . @ x @ . . .
+  . . . . @ . . . . . @ . . . .
+  . . . . @ . . . . . @ . . . .
+  `;
+
+const lasereyes = Pixelart.parse( lasereyes_design, {    // colors (red-ish)
+      '@': '#FB1A06',
+      'x': '#F85C0F',
+      'o': '#FFDB3C',
+     }
+   , [5,8]   // offset [x,y]
   );
 
-
+const lasereyes_light = Pixelart.parse( lasereyes_design, {    // colors (yellow-ish)
+      '@': '#E6D300',
+      'x': '#FFF799',
+      'o': '#FFFFFF',
+     }
+   , [5,8]   // offset [x,y]
+  );
   </script>
-
 </head>
 <body>
 
@@ -194,53 +224,100 @@ const eyepatch = Pixelart.parse( `
       <a href="https://github.com/cryptopunksnotdead/cryptopunksnotdead.github.io/blob/master/sandbox/pixelart/index.html">source on github »</a>
   </p>
 
-  <canvas id='alien'></canvas>
-  4x <canvas id='alien4x'></canvas>
-  8x <canvas id='alien8x'></canvas>
-  20x <canvas id='alien20x'></canvas>
+  <canvas id='punk1'></canvas>
+  4x <canvas id='punk1x4'></canvas>
+  8x <canvas id='punk1x8'></canvas>
+  20x <canvas id='punk1x20'></canvas>
+
+  <script>
+    // note: add headband to zero-attribute alien "archetype"
+    alien.draw( '#punk1' );
+    cap.draw( '#punk1' );
+
+    alien.draw( '#punk1x4', 4 );
+    cap.draw( '#punk1x4', 4 );
+
+    alien.draw( '#punk1x8', 8 );
+    cap.draw( '#punk1x8', 8 );
+
+    alien.draw( '#punk1x20', 20 );
+    cap.draw( '#punk1x20', 20 );
+  </script>
 
 
 <p>
   Let's try another one..
 </p>
 
-<canvas id='demon'></canvas>
-4x <canvas id='demon4x'></canvas>
-8x <canvas id='demon8x'></canvas>
-20x <canvas id='demon20x'></canvas>
-
+<canvas id='punk2'></canvas>
+4x <canvas id='punk2x4'></canvas>
+8x <canvas id='punk2x8'></canvas>
+20x <canvas id='punk2x20'></canvas>
 
 <script>
-   // note: add headband to zero-attribute alien "archetype"
-   alien.draw( '#alien' );
-   headband.draw( '#alien' );
+   // note: add headband to zero-attribute demon "archetype"
+   demon.draw( '#punk2' );
+   headband.draw( '#punk2' );
 
-   alien.draw( '#alien4x', 4 );
-   headband.draw( '#alien4x', 4 );
+   demon.draw( '#punk2x4', 4 );
+   headband.draw( '#punk2x4', 4 );
 
-   alien.draw( '#alien8x', 8 );
-   headband.draw( '#alien8x', 8 );
+   demon.draw( '#punk2x8', 8 );
+   headband.draw( '#punk2x8', 8 );
 
-   alien.draw( '#alien20x', 20 );
-   headband.draw( '#alien20x', 20 );
+   demon.draw( '#punk2x20', 20 );
+   headband.draw( '#punk2x20', 20 );
+</script>
 
 
-   // note: add headband and eyepathc  to zero-attribute demon "archetype"
-   demon.draw( '#demon' );
-   headband.draw( '#demon' );
-   eyepatch.draw( '#demon' );
+<p>
+  Let's try with laser eyes..
+</p>
 
-   demon.draw( '#demon4x', 4 );
-   headband.draw( '#demon4x', 4 );
-   eyepatch.draw( '#demon4x', 4 );
+<canvas id='punk3'></canvas>
+<canvas id='punk4'></canvas>
+4x <canvas id='punk3x4'></canvas>
+   <canvas id='punk4x4'></canvas>
+8x <canvas id='punk3x8'></canvas>
+   <canvas id='punk4x8'></canvas>
+20x <canvas id='punk3x20'></canvas>
+    <canvas id='punk4x20'></canvas>
 
-   demon.draw( '#demon8x', 8 );
-   headband.draw( '#demon8x', 8 );
-   eyepatch.draw( '#demon8x', 8 );
+<script>
+  // note: add laser eyes
+    demon.draw( '#punk3' );
+    headband.draw( '#punk3' );
+    lasereyes.draw( '#punk3' );
 
-   demon.draw( '#demon20x', 20 );
-   headband.draw( '#demon20x', 20 );
-   eyepatch.draw( '#demon20x', 20 );
+    demon.draw( '#punk3x4', 4 );
+    headband.draw( '#punk3x4', 4 );
+    lasereyes.draw( '#punk3x4', 4 );
+
+    demon.draw( '#punk3x8', 8 );
+    headband.draw( '#punk3x8', 8 );
+    lasereyes.draw( '#punk3x8', 8 );
+
+    demon.draw( '#punk3x20', 20 );
+    headband.draw( '#punk3x20', 20 );
+    lasereyes.draw( '#punk3x20', 20 );
+
+
+
+    alien.draw( '#punk4' );
+    cap.draw( '#punk4' );
+    lasereyes_light.draw( '#punk4' );
+
+    alien.draw( '#punk4x4', 4 );
+    cap.draw( '#punk4x4', 4 );
+    lasereyes_light.draw( '#punk4x4', 4 );
+
+    alien.draw( '#punk4x8', 8 );
+    cap.draw( '#punk4x8', 8 );
+    lasereyes_light.draw( '#punk4x8', 8 );
+
+    alien.draw( '#punk4x20', 20 );
+    cap.draw( '#punk4x20', 20 );
+    lasereyes_light.draw( '#punk4x20', 20 );
 </script>
 
 </body>
