@@ -24,44 +24,54 @@
     }
 
 
-     function writePunk( design, colors ) {
-        var pixels = parseAscii( design );
+    class Pixelart {
+        constructor( pixels, colors, offset ) {
+          this.pixels = pixels;
+          this.colors = colors;
+          this.offset = offset;
 
-        pixels.forEach( row => {
-          row.forEach( pixel => {
-          document.write("<div class='pixel' style='background-color:"+
-                          colors[pixel]+"'></div>");
-         });
-         document.write("<br>");
-      });
+          this.width  = pixels[0].length; // note: assume all rows the same for now
+          this.height = pixels.length;
+
+          console.log( `  width x height: ${this.width} x ${this.height}, offset: ${this.offset}` );
+        }
+
+        static parse( str, colors, offset=[0,0] ) {
+           var pixels = parseAscii( str );
+           return new Pixelart( pixels, colors, offset );
+        }
+
+        draw( canvas, zoom=1 ) {
+          if( typeof canvas === 'string' ) // convenience helper / hack; lets you pass in id of canvas element
+          {
+            canvas = document.querySelector( canvas );
+          }
+
+          // note only resize if offset is [0,0]
+          if( this.offset[0] == 0 && this.offset[1] == 0 ) {
+            canvas.width  = this.width*zoom;
+            canvas.height = this.height*zoom;
+            console.log( ` canvas width x height: ${this.width*zoom} x ${this.height*zoom}` );
+          }
+
+          var ctx = canvas.getContext( '2d' );
+          this.pixels.forEach( (row, y) => {
+                    row.forEach( (pixel, x) => {
+
+             if( pixel != '.' ) {  // auto-skip transparent for now - why? why not?
+               ctx.fillStyle = this.colors[pixel];
+               ctx.fillRect( x*zoom+this.offset[0]*zoom,
+                             y*zoom+this.offset[1]*zoom, zoom, zoom );
+             }
+            });
+          });
+        }
     }
-  </script>
 
+    ///////////////////////////
+    // some punk pixel art
 
-  <style>
-    .pixel {
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-    }
-  </style>
-
-</head>
-<body>
-
-
-  <h1>Show Punk in the Pixel Art ("ASCII") Text Format in Web Page</h1>
-
-  <p>
-    Yes, you can. Use "View page source" to see  how the "magic" works.
-      Or browse the
-      <a href="https://github.com/cryptopunksnotdead/cryptopunksnotdead.github.io/blob/master/sandbox/pixelart/index.html">source on github »</a>
-  </p>
-
-
-
-<script>
-  var alien_design = `
+    const alien_design = `
 ###
 # alien (male) - basic - zero attributes
 #
@@ -97,24 +107,15 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `;
 
- var alien_colors = {
-  '.':  '#ffffff',       // color 0 - background (use white for now - why? why not?)
-  '@':  '#000000',       // color 1 - black
-  'x':  '#75bdbd',       // color 2 - base 3  (darkest)
-  'o':  '#9be0e0',       // color 3 - base 2  (darker)
-  '^':  '#c8fbfb',       // color 4 - base 1
- };
-
-  writePunk( alien_design, alien_colors );
-</script>
-
-<p>
-  Let's try another one..
-</p>
+  const alien = Pixelart.parse( alien_design,  {
+                                  '@':  '#000000',       // color 1 - black
+                                  'x':  '#75bdbd',       // color 2 - base 3  (darkest)
+                                  'o':  '#9be0e0',       // color 3 - base 2  (darker)
+                                  '^':  '#c8fbfb',       // color 4 - base 1
+                               } );
 
 
-<script>
-  var demon_design = `
+  const demon_design = `
   ###
 # demon (male) - basic - zero attributes
 #
@@ -150,16 +151,96 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `;
 
-var demon_colors = {
-  '.':  '#ffffff',       // color 0 - background (use white for now - why? why not?)
-  '@':  '#000000',       // color 1 - black
-  'x':  '#390102',       // color 2 - base 3  (darkest)
-  'o':  '#630006',       // color 3 - base 2  (darker)
-  '^':  '#850008',       // color 4 - base 1
- };
+ const demon = Pixelart.parse( demon_design, {
+                                '@':  '#000000',       // color 1 - black
+                                'x':  '#390102',       // color 2 - base 3  (darkest)
+                                'o':  '#630006',       // color 3 - base 2  (darker)
+                                '^':  '#850008',       // color 4 - base 1
+                               });
+
+const headband = Pixelart.parse( `
+    x x x x x x x x x
+    @ @ @ @ @ @ @ @ @
+  `, {
+      '@': '#1A6ED5',
+      'x': '#FFFFFF'
+     }
+   , [7,7]   // offset [x,y]
+  );
+
+const eyepatch = Pixelart.parse( `
+  @ @ @ @ @ @ @ @ @ @ @
+  . . @ @ @ @ . . . . .
+  . . @ @ @ @ . . . . .
+  . . . @ @ . . . . . .
+`, {
+    '@': '#000000',
+  }
+  , [6,10]   // offset [x,y]
+  );
 
 
-  writePunk( demon_design, demon_colors );
+  </script>
+
+</head>
+<body>
+
+
+  <h1>Show Punk in the Pixel Art ("ASCII") Text Format in Web Page</h1>
+
+  <p>
+    Yes, you can. Use "View page source" to see  how the "magic" works.
+      Or browse the
+      <a href="https://github.com/cryptopunksnotdead/cryptopunksnotdead.github.io/blob/master/sandbox/pixelart/index.html">source on github »</a>
+  </p>
+
+  <canvas id='alien'></canvas>
+  4x <canvas id='alien4x'></canvas>
+  8x <canvas id='alien8x'></canvas>
+  20x <canvas id='alien20x'></canvas>
+
+
+<p>
+  Let's try another one..
+</p>
+
+<canvas id='demon'></canvas>
+4x <canvas id='demon4x'></canvas>
+8x <canvas id='demon8x'></canvas>
+20x <canvas id='demon20x'></canvas>
+
+
+<script>
+   // note: add headband to zero-attribute alien "archetype"
+   alien.draw( '#alien' );
+   headband.draw( '#alien' );
+
+   alien.draw( '#alien4x', 4 );
+   headband.draw( '#alien4x', 4 );
+
+   alien.draw( '#alien8x', 8 );
+   headband.draw( '#alien8x', 8 );
+
+   alien.draw( '#alien20x', 20 );
+   headband.draw( '#alien20x', 20 );
+
+
+   // note: add headband and eyepathc  to zero-attribute demon "archetype"
+   demon.draw( '#demon' );
+   headband.draw( '#demon' );
+   eyepatch.draw( '#demon' );
+
+   demon.draw( '#demon4x', 4 );
+   headband.draw( '#demon4x', 4 );
+   eyepatch.draw( '#demon4x', 4 );
+
+   demon.draw( '#demon8x', 8 );
+   headband.draw( '#demon8x', 8 );
+   eyepatch.draw( '#demon8x', 8 );
+
+   demon.draw( '#demon20x', 20 );
+   headband.draw( '#demon20x', 20 );
+   eyepatch.draw( '#demon20x', 20 );
 </script>
 
 </body>
