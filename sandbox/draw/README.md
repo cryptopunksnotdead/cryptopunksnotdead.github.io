@@ -27,7 +27,7 @@ two canvas "placeholder" elements with (unique) ids (e.g. `punk` for the first a
 
 ## Step 3- Draw the punks using any punk type or attribute from the punk building blocks and any zoom (original, 2x, 4x, etc) 
 
-Add an inline script block that uses the `drawPunk( id, [design, design, design], zoom=1)` 
+Add an inline script block that uses the `drawPunk( id, [design, design, design, ...], zoom=1)` 
 method to draw the punk according to your specs on the canvas:
 
 ``` html
