@@ -56,7 +56,8 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 
 ``` html
 <head>
-  <!-- i) pull in pixel art and punk drawing machinery / library code -->
+  <!-- step 1: pull in shared library and designs -->
+   <!-- i) pull in pixel art and punk drawing machinery / library code -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
   <!-- ii) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
@@ -64,7 +65,7 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 </head>
 <body>
 
-  <!-- step 2: prepare two "placeholder" canvases with (unique) ids -->
+  <!-- step 2: prepare two "placeholder" canvas with (unique) ids -->
   <canvas id='punk'></canvas>
   8x <canvas id='punk8x'></canvas>
 
