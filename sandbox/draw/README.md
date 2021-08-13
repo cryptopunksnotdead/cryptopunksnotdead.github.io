@@ -72,5 +72,5 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 </body>
 ```
 
-Save as `[punks.html](punks.html)` and open up in your browser to enjoy your punks.
+Save as [`punks.html`](punks.html) and open up in your browser to enjoy your punks.
 
