@@ -37,8 +37,7 @@ method to draw the punk according to your specs on the canvas:
 </script>
 ``` 
 
-That's it.    Open up the web page and enjoy your punks.
-
+That's it.    Open up the web page and enjoy your punks.  Try [`punks.html`](https://cryptopunksnotdead.github.io/sandbox/draw/punks.html) to see an online live copy.
 
 
 ## Questions? Comments?
@@ -78,4 +77,5 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 ```
 
 Save as [`punks.html`](punks.html) and open up in your browser to enjoy your punks.
+Try [`punks.html`](https://cryptopunksnotdead.github.io/sandbox/draw/punks.html) to see an online live copy.
 
