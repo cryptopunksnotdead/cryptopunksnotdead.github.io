@@ -24,7 +24,7 @@ to canvas "placeholder" elements with (unique) ids (e.g. `punk`, `punk8x`):
 8x <canvas id='punk8x'></canvas>
 ```
 
-## Step 3- Draw the punks using any punk type or attribute from the punk build blocks and any zoom (original, 2x, 4x, etc) 
+## Step 3- Draw the punks using any punk type or attribute from the punk building blocks and any zoom (original, 2x, 4x, etc) 
 
 Add an inline script block that uses the `drawPunk( id, [design, design, design], zoom=1)` 
 method to draw the punk according to your specs on the canvas:
