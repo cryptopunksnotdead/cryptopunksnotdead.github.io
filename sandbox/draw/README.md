@@ -29,8 +29,8 @@ Add an inline script block that uses the drawPunk method to draw the punk accord
 
 ``` html
 <script>
-    drawPunk( '#punk',  [alien, headband] );
-    drawPunk( '#punk8x' [zombie, knittedcap, lasereyes] );
+    drawPunk( '#punk',   [alien, headband] );
+    drawPunk( '#punk8x', [zombie, knittedcap, lasereyes], 8 );
 </script>
 ``` 
 
@@ -67,7 +67,7 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 
   <script>
     drawPunk( '#punk',  [alien, headband] );
-    drawPunk( '#punk8x' [zombie, knittedcap, lasereyes] );
+    drawPunk( '#punk8x', [zombie, knittedcap, lasereyes], 8 );
   </script>
 </body>
 ```
