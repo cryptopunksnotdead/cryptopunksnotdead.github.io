@@ -1,7 +1,7 @@
 # How to Draw Punks on Canvas (in JavaScript) from Scratch / Zero Using Punk Building Blocks in Pixel Art "ASCII" Text Format
 
 
-## Step 1 -  Use the shared pixel art library and the shared punk pixel art design
+## Step 1 -  Use the shared pixel art library and the shared punk pixel art designs
 
 In your head of your web page add:
 
@@ -13,10 +13,11 @@ In your head of your web page add:
   <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 ```
 
-## Step 2 - For every punk that you want to draw add a canvas element
+## Step 2 - For every punk that you want to draw add a canvas
 
-Let's draw two punks - the first in the original 24x24 format (zoom = 1) and the second with a 8x zoom. Add in the body of your web page
-to canvas elements with ids:
+Let's draw two punks - the first  (alien with headband) in the original 24x24 format (zoom = 1) 
+and the second (zombie with knitted cap and laser eyes) with a 8x zoom. Add in the body of your web page
+to canvas "placeholder" elements with (unique) ids (e.g. `punk`, `punk8x`):
 
 ``` html
    <canvas id='punk'></canvas>
@@ -25,7 +26,8 @@ to canvas elements with ids:
 
 ## Step 3- Draw the punks using any punk type or attribute from the punk build blocks and any zoom (original, 2x, 4x, etc) 
 
-Add an inline script block that uses the drawPunk method to draw the punk according to your specs on the canvas:
+Add an inline script block that uses the `drawPunk( id, [design, design, design], zoom=1)` 
+method to draw the punk according to your specs on the canvas:
 
 ``` html
 <script>
