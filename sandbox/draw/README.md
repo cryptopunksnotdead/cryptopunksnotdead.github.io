@@ -10,7 +10,7 @@ In your head of your web page add:
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
   <!-- 2) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
-  <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js/designs.js"></script>
+  <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 ```
 
 ## Step 2 - For every punk that you want to draw add a canvas element
@@ -57,7 +57,7 @@ Bonus:  All together now - for easy cut-n-paste and reference:
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
   <!-- 2) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
-  <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js/designs.js"></script>
+  <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 </head>
 <body>
 
