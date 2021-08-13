@@ -15,8 +15,8 @@ In your head of your web page add:
 
 ## Step 2 - For every punk that you want to draw add a canvas
 
-Let's draw two punks - the first  (alien with headband) in the original 24x24 format (zoom=1) 
-and the second (zombie with knitted cap and laser eyes) with a 8x zoom. Add in the body of your web page
+Let's draw two punks - the first in the original 24x24 format (zoom=1)  
+and the second with a 8x zoom. Add in the body of your web page
 two canvas "placeholder" elements with (unique) ids (e.g. `punk` for the first and `punk8x` for the second):
 
 ``` html
