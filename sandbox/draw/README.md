@@ -1,4 +1,4 @@
-# How to Draw Punks on Canvas (in JavaScript) from Scratch / Zero Using Punk Building Blocks in Pixel Art "Ascii" Text Format
+# How to Draw Punks on Canvas (in JavaScript) from Scratch / Zero Using Punk Building Blocks in Pixel Art "ASCII" Text Format
 
 
 ## Step 1 -  Use the shared pixel art library and the shared punk pixel art design
