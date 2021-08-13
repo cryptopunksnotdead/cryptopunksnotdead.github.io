@@ -25,10 +25,11 @@
 
 
     class Pixelart {
-        constructor( pixels, colors, offset ) {
+        constructor( pixels, options ) {
           this.pixels = pixels;
-          this.colors = colors;
-          this.offset = offset;
+
+          this.colors = options.colors  || { '@': '#000000' }
+          this.offset = options.offset  || [0,0];
 
           this.width  = pixels[0].length; // note: assume all rows the same for now
           this.height = pixels.length;
@@ -36,25 +37,12 @@
           console.log( `  width x height: ${this.width} x ${this.height}, offset: ${this.offset}` );
         }
 
-        static parse( str, colors, offset=[0,0] ) {
+        static parse( str, options ) {
            var pixels = parseAscii( str );
-           return new Pixelart( pixels, colors, offset );
+           return new Pixelart( pixels, options );
         }
 
-        draw( canvas, zoom=1 ) {
-          if( typeof canvas === 'string' ) // convenience helper / hack; lets you pass in id of canvas element
-          {
-            canvas = document.querySelector( canvas );
-          }
-
-          // note only resize if offset is [0,0]
-          if( this.offset[0] == 0 && this.offset[1] == 0 ) {
-            canvas.width  = this.width*zoom;
-            canvas.height = this.height*zoom;
-            console.log( ` canvas width x height: ${this.width*zoom} x ${this.height*zoom}` );
-          }
-
-          var ctx = canvas.getContext( '2d' );
+        draw( ctx, zoom=1 ) {
           this.pixels.forEach( (row, y) => {
                     row.forEach( (pixel, x) => {
 
@@ -67,6 +55,7 @@
           });
         }
     }
+
 
     ///////////////////////////
     // some punk pixel art
@@ -107,12 +96,13 @@
 . . . . . . @ ^ ^ ^ @ . . . . . . . . . . . . .
 `;
 
-  const alien = Pixelart.parse( alien_design,  {
-                                  '@':  '#000000',       // color 1 - black
-                                  'x':  '#75bdbd',       // color 2 - base 3  (darkest)
-                                  'o':  '#9be0e0',       // color 3 - base 2  (darker)
-                                  '^':  '#c8fbfb',       // color 4 - base 1
-                               } );
+  const alien = Pixelart.parse( alien_design, {
+                                 colors: {
+                                    '@':  '#000000',       // color 1 - black
+                                    'x':  '#75bdbd',       // color 2 - base 3  (darkest)
+                                    'o':  '#9be0e0',       // color 3 - base 2  (darker)
+                                    '^':  '#c8fbfb',       // color 4 - base 1
+                                  }} );
 
 
   const demon_design = `
@@ -152,11 +142,12 @@
 `;
 
  const demon = Pixelart.parse( demon_design, {
-                                '@':  '#000000',       // color 1 - black
-                                'x':  '#390102',       // color 2 - base 3  (darkest)
-                                'o':  '#630006',       // color 3 - base 2  (darker)
-                                '^':  '#850008',       // color 4 - base 1
-                               });
+                                colors: {
+                                  '@':  '#000000',       // color 1 - black
+                                  'x':  '#390102',       // color 2 - base 3  (darkest)
+                                  'o':  '#630006',       // color 3 - base 2  (darker)
+                                  '^':  '#850008',       // color 4 - base 1
+                                }} );
 
 
 ////////////////////////////////////
@@ -167,23 +158,23 @@ const cap = Pixelart.parse( `
   . @ @ @ @ @ @ x @ @ . . . .
   @ @ @ @ @ @ @ @ x @ . . . .
   @ @ @ @ @ @ @ @ @ @ @ @ @ .
-  @ @ @ @ @ @ @ @ @ @ @ @ @ @
-`, {    // colors
-  '@': '#8119b7',
-  'x': '#b261dc'
-}, [6,4]  // offset [x,y]
-  );
+  @ @ @ @ @ @ @ @ @ @ @ @ @ @`, {
+    colors: {
+      '@': '#8119b7',
+     ' x': '#b261dc' },
+    offset: [6,4]
+   });
 
 
 const headband = Pixelart.parse( `
     x x x x x x x x x
-    @ @ @ @ @ @ @ @ @
-  `, {    // colors
+    @ @ @ @ @ @ @ @ @`, {
+     colors: {
       '@': '#1A6ED5',
       'x': '#FFFFFF'
-     }
-   , [7,7]   // offset [x,y]
-  );
+     },
+     offset: [7,7]
+    });
 
 
 const lasereyes_design = `
@@ -196,21 +187,43 @@ const lasereyes_design = `
   . . . . @ . . . . . @ . . . .
   `;
 
-const lasereyes = Pixelart.parse( lasereyes_design, {    // colors (red-ish)
+const lasereyes = Pixelart.parse( lasereyes_design, {
+    colors: {    // red-ish
       '@': '#FB1A06',
       'x': '#F85C0F',
       'o': '#FFDB3C',
-     }
-   , [5,8]   // offset [x,y]
-  );
+     },
+     offset: [5,8]
+    });
 
-const lasereyes_light = Pixelart.parse( lasereyes_design, {    // colors (yellow-ish)
+const lasereyes_light = Pixelart.parse( lasereyes_design, {
+    colors: {  // yellow-ish
       '@': '#E6D300',
       'x': '#FFF799',
       'o': '#FFFFFF',
-     }
-   , [5,8]   // offset [x,y]
-  );
+     },
+     offset: [5,8]
+    });
+
+
+
+    function drawPunk( q, designs, zoom=1 ) {
+           // convenience helper / hack; lets you pass in id of canvas element
+           //   other assume canvas element passed in (use as is)
+          let canvas =  (typeof q === 'string') ?  document.querySelector( q ) : q;
+
+          // note: use width/height from first design
+          canvas.width  = designs[0].width*zoom;
+          canvas.height = designs[0].height*zoom;
+
+          console.log( ` canvas width x height: ${canvas.width} x ${canvas.height}` );
+
+          let ctx = canvas.getContext( '2d' );
+
+          for( let design of designs ) {
+             design.draw( ctx, zoom );
+          }
+    }
   </script>
 </head>
 <body>
@@ -230,18 +243,11 @@ const lasereyes_light = Pixelart.parse( lasereyes_design, {    // colors (yellow
   20x <canvas id='punk1x20'></canvas>
 
   <script>
-    // note: add headband to zero-attribute alien "archetype"
-    alien.draw( '#punk1' );
-    cap.draw( '#punk1' );
-
-    alien.draw( '#punk1x4', 4 );
-    cap.draw( '#punk1x4', 4 );
-
-    alien.draw( '#punk1x8', 8 );
-    cap.draw( '#punk1x8', 8 );
-
-    alien.draw( '#punk1x20', 20 );
-    cap.draw( '#punk1x20', 20 );
+    // note: add cap to zero-attribute alien "archetype"
+    drawPunk( '#punk1',    [alien, cap] );
+    drawPunk( '#punk1x4',  [alien, cap], 4 );
+    drawPunk( '#punk1x8',  [alien, cap], 8 );
+    drawPunk( '#punk1x20', [alien, cap], 20 );
   </script>
 
 
@@ -256,17 +262,10 @@ const lasereyes_light = Pixelart.parse( lasereyes_design, {    // colors (yellow
 
 <script>
    // note: add headband to zero-attribute demon "archetype"
-   demon.draw( '#punk2' );
-   headband.draw( '#punk2' );
-
-   demon.draw( '#punk2x4', 4 );
-   headband.draw( '#punk2x4', 4 );
-
-   demon.draw( '#punk2x8', 8 );
-   headband.draw( '#punk2x8', 8 );
-
-   demon.draw( '#punk2x20', 20 );
-   headband.draw( '#punk2x20', 20 );
+    drawPunk( '#punk2',    [demon, headband] );
+    drawPunk( '#punk2x4',  [demon, headband], 4 );
+    drawPunk( '#punk2x8',  [demon, headband], 8 );
+    drawPunk( '#punk2x20', [demon, headband], 20 );
 </script>
 
 
@@ -285,39 +284,16 @@ const lasereyes_light = Pixelart.parse( lasereyes_design, {    // colors (yellow
 
 <script>
   // note: add laser eyes
-    demon.draw( '#punk3' );
-    headband.draw( '#punk3' );
-    lasereyes.draw( '#punk3' );
 
-    demon.draw( '#punk3x4', 4 );
-    headband.draw( '#punk3x4', 4 );
-    lasereyes.draw( '#punk3x4', 4 );
+  drawPunk( '#punk3',    [demon, headband, lasereyes] );
+  drawPunk( '#punk3x4',  [demon, headband, lasereyes], 4 );
+  drawPunk( '#punk3x8',  [demon, headband, lasereyes], 8 );
+  drawPunk( '#punk3x20', [demon, headband, lasereyes], 20 );
 
-    demon.draw( '#punk3x8', 8 );
-    headband.draw( '#punk3x8', 8 );
-    lasereyes.draw( '#punk3x8', 8 );
-
-    demon.draw( '#punk3x20', 20 );
-    headband.draw( '#punk3x20', 20 );
-    lasereyes.draw( '#punk3x20', 20 );
-
-
-
-    alien.draw( '#punk4' );
-    cap.draw( '#punk4' );
-    lasereyes_light.draw( '#punk4' );
-
-    alien.draw( '#punk4x4', 4 );
-    cap.draw( '#punk4x4', 4 );
-    lasereyes_light.draw( '#punk4x4', 4 );
-
-    alien.draw( '#punk4x8', 8 );
-    cap.draw( '#punk4x8', 8 );
-    lasereyes_light.draw( '#punk4x8', 8 );
-
-    alien.draw( '#punk4x20', 20 );
-    cap.draw( '#punk4x20', 20 );
-    lasereyes_light.draw( '#punk4x20', 20 );
+  drawPunk( '#punk4',    [alien, cap, lasereyes_light] );
+  drawPunk( '#punk4x4',  [alien, cap, lasereyes_light], 4 );
+  drawPunk( '#punk4x8',  [alien, cap, lasereyes_light], 8 );
+  drawPunk( '#punk4x20', [alien, cap, lasereyes_light], 20 );
 </script>
 
 </body>
