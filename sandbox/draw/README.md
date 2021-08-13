@@ -38,9 +38,18 @@ That's it.    Open up the web page and enjoy your punks.
 
 
 
+## Questions? Comments?
+
+Post them on the [CryptoPunksDev reddit](https://old.reddit.com/r/CryptoPunksDev). Thanks.
+
+
+
+
+
+
 ---
 
-All together now - for easy cut-n-paste and reference:
+Bonus:  All together now - for easy cut-n-paste and reference:
 
 ``` html
 <head>
