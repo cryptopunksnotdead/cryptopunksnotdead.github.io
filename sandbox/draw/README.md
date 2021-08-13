@@ -6,10 +6,10 @@
 In your head of your web page add:
 
 ``` html
-  <!-- a) pull in pixel art and punk drawing machinery / library code -->
+  <!-- i) pull in pixel art and punk drawing machinery / library code -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
-  <!-- b) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
+  <!-- ii) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 ```
 
@@ -56,10 +56,10 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 
 ``` html
 <head>
-  <!-- a) pull in pixel art and punk drawing machinery / library code -->
+  <!-- i) pull in pixel art and punk drawing machinery / library code -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
-  <!-- b) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
+  <!-- ii) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 </head>
 <body>
