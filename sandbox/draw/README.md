@@ -6,10 +6,10 @@
 In your head of your web page add:
 
 ``` html
-  <!-- 1) pull in pixel art and punk drawing machinery / library code -->
+  <!-- a) pull in pixel art and punk drawing machinery / library code -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
-  <!-- 2) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
+  <!-- b) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 ```
 
@@ -56,18 +56,19 @@ Bonus:  All together now - for easy cut-n-paste and reference:
 
 ``` html
 <head>
-  <!-- 1) pull in pixel art and punk drawing machinery / library code -->
+  <!-- a) pull in pixel art and punk drawing machinery / library code -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/lib/pixelart.js"></script>
 
-  <!-- 2) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
+  <!-- b) pull in some (shared) punk pixel art designs (e.g. alien, demon, etc.) -->
   <script src="https://cryptopunksnotdead.github.io/sandbox/designs.js"></script>
 </head>
 <body>
 
-   <!-- let's draw two punks -->
+  <!-- step 2: prepare two "placeholder" canvases with (unique) ids -->
   <canvas id='punk'></canvas>
   8x <canvas id='punk8x'></canvas>
 
+  <!-- step 3: let's draw two punks -->
   <script>
     drawPunk( '#punk',  [alien, headband] );
     drawPunk( '#punk8x', [zombie, knittedcap, lasereyes], 8 );
