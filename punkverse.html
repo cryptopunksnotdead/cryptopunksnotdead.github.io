@@ -1,0 +1,36 @@
+---
+# all punkverse posts in one-page
+
+layout: page
+---
+
+
+<h1>Punkverse - Punk Projects &amp; Ideas -
+Punk Improvement Process (Punk's Not Dead) -
+Request for Comments</h1>
+
+
+Contents:
+
+<ul>
+{% for post in site.punkverse %}
+  <li>{{ post.title }}</li>
+{% endfor %}
+</ul>
+
+
+
+{% for post in site.punkverse %}
+  <div class="post">
+    <h2>{{ post.title }}</h2>
+
+    {{ post.content }}
+
+    <p>
+      <a href="{{ post.comments_url }}">See or post your comments »</a>
+    </p>
+  </div>
+{% endfor %}
+
+
+

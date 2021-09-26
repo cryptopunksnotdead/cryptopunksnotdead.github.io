@@ -38,6 +38,19 @@ layout: page
   Request for Comments
 </p>
 
+<ul>
+  {% for post in site.punkverse %}
+    <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
+
+<p>
+    <a href="punkverse">Read all /punkverse posts »</a>
+</p>
+
+
+
+
 
 <p>
 /help  -  Help - How Do I [Start] ...

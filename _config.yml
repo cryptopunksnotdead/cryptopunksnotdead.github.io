@@ -6,6 +6,10 @@ collections:
   inside:
     output: true
     permalink: /inside/:path/
+  punkverse:
+    output: true
+    permalink: /punkverse/:path/
+
 
 
 exclude:
