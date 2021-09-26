@@ -2,12 +2,15 @@
 layout: page
 ---
 
+<!--
+  add /help - why? why not?
+-->
 
 <p>
  /inside,
  /programming,
  /punkverse,
- /help,
+ /24px,
  /tools
 </p>
 
@@ -63,21 +66,40 @@ layout: page
 
 
 
+<p>
+ /24px -  Awesome 24px
+</p>
+
+<ul>
+  {% for post in site.awesome24px %}
+    <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
 
 
 <p>
-/help  -  Help - How Do I [Start] ...
+    <a href="24px">Read all /24px posts »</a>
 </p>
 
+
+
+
+<!--
+<p>
+/help  -  Help - How Do I [Start] ...
+</p>
+-->
 
 
 <p>
 /tools -   Pixel Punk Editor / Drawing Tool & More
 </p>
 
-<a href="pixel.js/editor">Pixel Punk Editor / Drawing Tool »</a>
+<a href="pixelart.js/editor">Pixel Punk Editor / Drawing Tool »</a>
 
-<a href="pixel.js/pixelart/random">Generate Free Random Pixel Punks (Push the Big Blue I'm Feeling Lucky Button) »
+<br>
+
+<a href="pixelart.js/pixelart/random">Generate Free Random Pixel Punks (Push the Big Blue I'm Feeling Lucky Button) »
 </a>
 
 

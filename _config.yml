@@ -12,6 +12,9 @@ collections:
   punkverse:
     output: true
     permalink: /punkverse/:path/
+  awesome24px:
+    output: true
+    permalink: /24px/:path/
 
 
 
