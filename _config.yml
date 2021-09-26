@@ -1,0 +1,12 @@
+
+
+title: "Crypto Punk's Not Dead Chronicle - Inside the Billion $$$ Blockchain Token Con-Artist Fraud"
+
+collections:
+  inside:
+    output: true
+    permalink: /inside/:path/
+
+
+exclude:
+- README.md
