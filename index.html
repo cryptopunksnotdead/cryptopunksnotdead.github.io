@@ -7,7 +7,8 @@ layout: page
  /inside,
  /programming,
  /punkverse,
- /help
+ /help,
+ /tools
 </p>
 
 
@@ -30,6 +31,18 @@ layout: page
 <p>
 /programming -  Programming Punks Updates - Yes, You Can! Do-It-Yourself (DIY)
 </p>
+
+
+<ul>
+  {% for post in site.programming %}
+    <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
+
+<p>
+    <a href="programming">Read all /programming posts »</a>
+</p>
+
 
 
 <p>
@@ -55,6 +68,17 @@ layout: page
 <p>
 /help  -  Help - How Do I [Start] ...
 </p>
+
+
+
+<p>
+/tools -   Pixel Punk Editor / Drawing Tool & More
+</p>
+
+<a href="pixel.js/editor">Pixel Punk Editor / Drawing Tool »</a>
+
+<a href="pixel.js/pixelart/random">Generate Free Random Pixel Punks (Push the Big Blue I'm Feeling Lucky Button) »
+</a>
 
 
 

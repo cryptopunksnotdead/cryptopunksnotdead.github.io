@@ -6,6 +6,9 @@ collections:
   inside:
     output: true
     permalink: /inside/:path/
+  programming:
+    output: true
+    permalink: /programming/:path/
   punkverse:
     output: true
     permalink: /punkverse/:path/
