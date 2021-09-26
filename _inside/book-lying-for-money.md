@@ -7,7 +7,7 @@ comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/pupdps/book_corne
 Hello,
 
    So far I got asked here on crypto punk's not dead
-  about videos (how to do an art token fraud in five minute or such) but never about books about the history or money (and fraud).
+  about videos (how to do an art token fraud in five minute or such) but never about books about the history of money (and fraud).
 
    Anyways, let's bring on David Gerard - a crypto / blockchain historian and writer - to help us out:
 
