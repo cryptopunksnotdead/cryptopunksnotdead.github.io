@@ -1,0 +1,32 @@
+---
+# all awesome 24px posts in one-page
+
+layout: page
+---
+
+
+<h1>Awesome 24px (and 28px) Downloads - Free Pixel Art Collections in the 24x24 (and 28x28) Format - Punks, Apes, Cats, Dogs, Rocks, And More</h1>
+
+
+Contents:
+
+<ul>
+{% for post in site.awesome24px %}
+  <li>{{ post.title }}</li>
+{% endfor %}
+</ul>
+
+
+
+{% for post in site.awesome24px %}
+  <div class="post">
+    <h2>{{ post.title }}</h2>
+
+    {{ post.content }}
+
+    <p>
+      <a href="{{ post.comments_url }}">See or post your comments »</a>
+    </p>
+  </div>
+{% endfor %}
+

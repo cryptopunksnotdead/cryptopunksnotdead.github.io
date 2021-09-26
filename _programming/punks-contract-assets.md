@@ -1,5 +1,5 @@
 ---
-title: "Inside the CryptoPunksData Contract - All 133 Assets (11 Archetypes 'n' 122 Attributes) in the 24x24px Format For Easy (Re)Use "Off-Chain" - Right-Click to Download Images"
+title: "Inside the CryptoPunksData Contract - All 133 Assets (11 Archetypes 'n' 122 Attributes) in the 24x24px Format For Easy (Re)Use 'Off-Chain' - Right-Click to Download Images"
 
 comments_url: https://old.reddit.com/r/CryptoPunksDev/comments/plhwrz/inside_the_cryptopunksdata_contract_all_133/
 ---
