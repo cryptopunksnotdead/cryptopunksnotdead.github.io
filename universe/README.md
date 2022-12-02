@@ -22,7 +22,7 @@ Bonus: Yes, you can register new punk building blocks!
 
 [**0xmunger**](https://github.com/0xmunger) has put together a (python) script 
 that queries  (ethereum) blockchain services to find out how many of the 10,000  
-Matt & John's® Punks are lost forever - by checking punks that have been in wallets without
+Matt & John's® Punks are lost forever - by checking punk tokens that have been in wallets without
 any activity for years.  See [**0xmunger/lost-punks »**](https://github.com/0xmunger/lost-punks)
 
 > Roughly 192, or 2% of CryptoPunks are lost. "Lost" is defined as a wallet 
