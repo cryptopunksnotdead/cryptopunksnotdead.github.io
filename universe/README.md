@@ -1,7 +1,7 @@
 # (Pixel) Punk (Programming) Links From Around The World, Universe & Metaverse 
 
 
-Note:  This Link Blog is written by [**Gerald Bauer**](https://github.com/geraldb).  For now I do NOT include "self-referencing" links
+Note:  This link blog is written by [**Gerald Bauer**](https://github.com/geraldb).  For now I do NOT duplicate and include "self-referencing" links
 to  my own little (punk) scripts here - if you are curious what I am up to, see the weekly updates @ [**Gerald Bauer's Code Monkey Diary / Updates - What's News? »**](https://geraldb.github.io/) 
 
 
