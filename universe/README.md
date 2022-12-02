@@ -2,7 +2,7 @@
 
 
 Note:  This link blog is written by [**Gerald Bauer**](https://github.com/geraldb).  For now I do NOT duplicate and include "self-referencing" links
-to  my own little (punk) scripts here - if you are curious what I am up to, see the weekly updates @ [**Gerald Bauer's Code Monkey Diary / Updates - What's News? »**](https://geraldb.github.io/) 
+to  my own little (punk) scripts here - if you are curious what I am up to, see the weekly updates @ [**Gerald Bauer's Code Monkey Diary / Updates - What's News @ Punk's Not Dead, Learn Pixel Art, Pixel Art Exchange & Friends? »**](https://geraldb.github.io/) 
 
 
 ## What's News?
