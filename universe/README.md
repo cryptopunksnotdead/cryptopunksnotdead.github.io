@@ -34,8 +34,29 @@ The original low-effort punk (token) collection is missing metadata (attributes,
 A new (propriertary closed-source) website by ??? is filling the gap - see [**lep.directory »**](https://lep.directory/)
 
 
+---
 
+November 2022
 
+### Matt & John's® Punk History Corner -  Androidify — [Matt & John's] Larva Labs & The First [Blockchain] Profile Picture (PFP) Use Case by Nick.bit
+
+> On February 14, 2011, Larva Labs (the [Matt & John's] team who created [Matt & John's] Punks in 2017) 
+> launched an internal project with Google Creative Lab called Androidify.
+> The idea was to create unique customizable avatars based on the Android brand robot, 
+> thanks to dozens of customization options and accessories, to be used as profile pictures (PFPs) - term used for profile picture personal avatars - on Android devices and social media sites. As [Matt & John's]  Larva Labs wrote, "Create Android versions of yourself and friends. Set as contact photo, or post to Twitter and Facebook. Resize, recolor and choose from lots of clothing options to get your Android just right!". It ended up growing to become a crucial part of the global Android brand with over 10 million downloads!
+>
+> [...]
+>
+> A Sense of Resemblance - 
+> We also cannot deny that both products have a sense of resemblance, along with the fact that the Androidify project was intentionally created for profile picture (PFP) usage. As such, you could easily customize your own personalized avatar with many different hairstyles, skin colours, and accessories like 3D glasses, pipes, medical masks, beanies, and much more!
+>
+> To demonstrate this statement, I decided to use the original version of the Androidify App (Feb. 2011) to create similar-looking
+> [Matt & John's] Punks. As you can see from the image below, 
+> it is quite evident that both products share lots of identical features and characteristics. It even appears that 44 Punk traits were present in the app in 2011, and 57 traits in 2014. This means that (61%) of [Matt & John's] Punks traits were present in the Androidify app by 2014!
+
+[**Read more »**](https://mirror.xyz/nickbit.eth/awIhCJzTfWnykcqpaQ-hP3FEMTcyU-NTWzRzSdRn8xs) 
+
+Bonus: Try [**Androdify**](https://web.archive.org/web/20150310015100/https://androidify.com/en/#/create) (the web edition in your browser via the Wayback Machine Internet Archive).
 
 
 ---
