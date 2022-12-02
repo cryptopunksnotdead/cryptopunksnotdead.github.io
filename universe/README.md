@@ -28,6 +28,64 @@ any activity for years.  See [**0xmunger/lost-punks »**](https://github.com/0xm
 
 
 
+### lep.directory - New Low-Effort Punks (LEP) Directory Website - Browse by Punk Type Incl. Original 1/1s And More
+
+The original low-effort punk (token) collection is missing metadata (attributes, etc).  
+A new (propriertary closed-source) website by ??? is filling the gap - see [**lep.directory »**](https://lep.directory/)
+
+
+
+
+
+Evergreens - Oldies, But Goldies
+
+### Matt & John's® Punks V2 Sales Data Script & Charts by ???
+
+
+> Here is the plot of all [Matt & John's®] punk [V2] purchases from 6/23/2017 to present.
+>
+> Raw Data - You can find the raw data here. 
+> This text file consists of rows of tuples of the form (date, punk id, price). It is updated with the latest transactions every 24 hours.
+>
+> Code - You can find the code for downloading the data and generating the plots here.
+
+See [**punkprices.subopt.org »**](http://punkprices.subopt.org/)
+
+
+### Subgraph for the Matt & John's® Punks V2 by Jerry Okolo
+
+[**Jerry Okolo**](https://github.com/itsjerryokolo)  has put together a graph (blockchain) indexing 
+service (aka "subgraph") that you can query / use via GraphQL. Example - Sales for the last 30 days:
+
+```graphql
+query Last30DaysSales($timestamp_gt: String) {
+  sales(
+    orderBy: timestamp
+    orderDirection: desc
+    where: { timestamp_gt: $timestamp_gt }
+  ) {
+    id
+    to {
+      id
+    }
+    amount
+    txHash
+    timestamp
+  }
+}
+```
+
+With `$timestamp_gt` set like this:
+
+```javascript
+{
+  $timestamp_gt: Math.round(Date.now() / 1000) - 30 * 24 * 60 * 60;
+}
+```
+
+
+See [**itsjerryokolo/CryptoPunks »**](https://github.com/itsjerryokolo/CryptoPunks)
+ 
 
 ---
 
