@@ -69,6 +69,28 @@ November 2022
 Bonus: Try [**Androdify**](https://web.archive.org/web/20150310015100/https://androidify.com/en/#/create) (the web edition in your browser via the Wayback Machine @ the Internet Archive).
 
 
+
+### (Free) Metaverse Course Fall 2022 (12 Weeks) by Anonymous Punk #6529 Et Al
+
+Anonymous Punk #6529 (of Noun fame & fortune) et al started a free 12-week massive open online course 
+(via the University of Nicosia, Cyprus). The outline reads:
+
+- Week 1 (Oct 3) - What is an Non-Fungible Token (NFT)?
+- Week 2 (Oct 10) - Copyright and Provenance in Non-Fungible Tokens (NFTs)
+- Week 3 (Oct 17) - Profile Picture (PFP) Non-Fungible Tokens (NFTs)
+- Week 4 (Oct 24) - Art Non-Fungible Tokens - Part I: CryptoArt ("1 of 1s") 
+- Week 5 (Oct 31) - Art Non-Fungible Tokens - Part II: Generative Art
+- Week 6 (Nov 7) - Key considerations in the Non-Fungible Token (NFT) space
+- Week 7 (Nov 14) - Gaming Non-Fungible Tokens (NFTs)
+- Week 8 (Nov 21) - What is a metaverse?
+- Week 9 (Nov 28) - Trends in visualization technology
+- Week 10 (Dec 5) - Financing models in the Non-Fungible Token (NFT) and Metaverse space
+- Week 11 (Dec 12) - Non-Fungible Tokens (NFTs) - off-chain objects and the broader environment
+- Week 12 (Dec 19) - Metaverse 2030: Long-term technology stacks for the metaverse and digital society
+
+For some first quick course notes & links, see [**Awesome Metaverse @ Profile Picture (As A Service) »**](https://github.com/profilepic/awesome-metaverse)
+
+
 ---
 
 Evergreens - Oldies, But Goldies
