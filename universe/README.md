@@ -13,9 +13,14 @@ December 2022
 
 [**0xTycoon**](https://github.com/0xTycoon) is putting together a new (on-blockchain) service
 that lets you build your own punks from scratch.
+<!--
 See [**0xTycoon/punk-blocks »**](https://github.com/0xTycoon/punk-blocks)
+-->
+See 0xTycoon/punk-blocks »
 
 Bonus: Yes, you can register new punk building blocks!
+
+**Update Dec/3rd**  Sorry - looks like 0xTycoon made the repo private. If anyone knows more about Punk Blocks by 0xTycoon, please tell.    
 
 
 ### Blockchain Analytics Script by 0xmunger - How Many Matt & John's® Punks Are Lost Forever? 
